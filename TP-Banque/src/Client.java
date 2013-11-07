@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Client {
 
 	private int numero;
-	private String nom, prenom, compte, client;
+	private String nom, prenom;
 	//arrayList de compte
 	ArrayList<Compte> comptes = new ArrayList<Compte>();
 
