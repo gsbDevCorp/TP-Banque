@@ -1,4 +1,11 @@
-
+/**
+ * 
+ * @author Robin Billy - SIO2
+ * 
+ * Classe compte courant
+ * 
+ * @extends Client
+ */
 public class Compte extends Client {
 	
 	private String client;
