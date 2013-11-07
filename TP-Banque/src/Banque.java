@@ -19,7 +19,7 @@ public class Banque {
 	 */
 	public Client plusRiche() {
 		double solde = 0.0;
-		Client clientPlusRiche;
+		Client clientPlusRiche = null;
 		for(Client client : this.clients) {
 			if (client.soldeGeneral() >= solde)
 				clientPlusRiche = client;

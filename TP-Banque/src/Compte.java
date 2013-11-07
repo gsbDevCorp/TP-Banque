@@ -1,6 +1,6 @@
 /**
  * 
- * @author Robin Billy - SIO2
+ * @author Robin Billy - Chafik Daggag - SIO2
  * 
  * Classe compte courant
  * 
@@ -38,13 +38,12 @@ public class Compte extends Client {
 		return this.solde;
 	}
 	//crédite le solde d'un montant fourni
-		public double crediter(double montant) {
+		public void crediter(double montant) {
 			solde = solde + montant;
-			return solde;
 		}
 		//débite le solde d'un montant fourni
 		//et retourner un booléen
-		public double debiter(double montant) {
+		public boolean debiter(double montant) {
 			boolean reponse;
 			if (solde < montant) {
 				reponse = false;
@@ -53,7 +52,7 @@ public class Compte extends Client {
 				solde = solde - montant;
 				reponse = true;
 			}
-			return solde;
+			return reponse;
 		}
 
 	
