@@ -37,7 +37,25 @@ public class Compte extends Client {
 	public double getSolde() {
 		return this.solde;
 	}
-	
+	//crédite le solde d'un montant fourni
+		public double crediter(double montant) {
+			solde = solde + montant;
+			return solde;
+		}
+		//débite le solde d'un montant fourni
+		//et retourner un booléen
+		public double debiter(double montant) {
+			boolean reponse;
+			if (solde < montant) {
+				reponse = false;
+			}
+			else {
+				solde = solde - montant;
+				reponse = true;
+			}
+			return solde;
+		}
+
 	
 	/**
 	 * Transfert de montant du compte vers
