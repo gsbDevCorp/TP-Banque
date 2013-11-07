@@ -24,6 +24,10 @@ public class Compte extends Client {
 		return this.numero;
 	}
 	
+	public void setNumero() {
+		this.numero = numero;
+	}
+	
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
@@ -67,6 +71,7 @@ public class Compte extends Client {
 		for (Compte compte : super.comptes) {
 			if (compte.getNumero() == numero) {
 				compte.setSolde(compte.getSolde() + montant);
+				this.setSolde(this.getSolde() - montant);
 				return true;
 			}
 		}
@@ -88,5 +93,9 @@ public class Compte extends Client {
 			}
 		}
 		return false;
+	}
+	
+	public String toString() {
+		return ("Compte n°" + this.numero + ". Solde : " + this.solde);
 	}
 }

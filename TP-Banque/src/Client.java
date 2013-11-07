@@ -46,7 +46,7 @@ public class Client {
 	//méthode d'affichage d'un compte
 	public void afficherComptes() {
 		for (Compte c : comptes) {
-			System.out.println(c);
+			System.out.println(c + "€");
 		}
 	}
 	//méthode de calcul du solde général
