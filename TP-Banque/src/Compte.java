@@ -1,40 +1,69 @@
 
-public class Compte {
+public class Compte extends Client {
 	
 	private String client;
-	private int id;
-	protected double solde;
-	private double interet;
+	private int numero;
+	private double solde;
 	
 	//constructeur vide
-	public Compte() {
-		
-	}
+	public Compte() {}
 	
 	//constructeur avec tous les attibuts
-	public Compte(String client, int id) {
-		this.client =client;
-		this.id=id;
+	public Compte(String client, int numero) {
+		this.client = client;
+		this.numero = numero;
 	}
 	
-	//créditer le solde d'un montant fourni
-	public void credit(double montant){
-		solde += montant;
+	public int getNumero() {
+		return this.numero;
 	}
 	
-	//débiter le solde d'un montant fourni
-	public boolean debite(double montant) {
+	public void setSolde(double solde) {
+		this.solde = solde;
+	}
+	
+	/**
+	 * Retourne le solde du compte
+	 * 
+	 * @return double
+	 */
+	public double getSolde() {
+		return this.solde;
+	}
+	
+	
+	/**
+	 * Transfert de montant du compte vers
+	 * un autre compte
+	 * 
+	 * @param montant
+	 * @param numero
+	 * @return boolean
+	 */
+	public boolean transfertCompte(double montant, int numero) {
+		for (Compte compte : super.comptes) {
+			if (compte.getNumero() == numero) {
+				compte.setSolde(compte.getSolde() + montant);
+				return true;
+			}
+		}
 		return false;
 	}
 	
-	//retourne le solde du compte(en prenant en compte les interêts)
-	public double getSolde(){
-		return solde;
+	/**
+	 * Comparaison du solde du compte avec
+	 * un autre compte
+	 * 
+	 * @param numero
+	 * @return boolean
+	 */
+	public boolean comparerCompte(int numero) {
+		for (Compte compte : super.comptes) {
+			if (compte.getNumero() == numero) {
+				if (this.getSolde() >= compte.getSolde())
+					return true;
+			}
+		}
+		return false;
 	}
-	
-	//retourne les infos du client
-	public String getClient(){
-		return client;
-	}
-	
 }
