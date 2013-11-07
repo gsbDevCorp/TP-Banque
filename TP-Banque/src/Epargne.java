@@ -8,7 +8,7 @@ public class Epargne extends Compte{
 
 	}
 	//constructeur avec tous les attributes
-	public Epargne(int numero, double solde, float taux, Client client) {
+	public Epargne(int numero, double solde, float taux) {
 		super();
 		this.taux = taux;
 	}

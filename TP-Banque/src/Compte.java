@@ -8,7 +8,6 @@
  */
 public class Compte extends Client {
 	
-	private String client;
 	private int numero;
 	private double solde;
 	
@@ -16,9 +15,9 @@ public class Compte extends Client {
 	public Compte() {}
 	
 	//constructeur avec tous les attibuts
-	public Compte(String client, int numero) {
-		this.client = client;
+	public Compte(int numero, double solde) {
 		this.numero = numero;
+		this.solde = solde;
 	}
 	
 	public int getNumero() {

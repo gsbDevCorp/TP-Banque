@@ -25,8 +25,8 @@ public class Courant extends Compte {
 	 * @param id
 	 * @param decouvert
 	 */
-	public Courant(String client, int id, double solde, double decouvert) {
-		super(client, id);
+	public Courant(int id, double solde, double decouvert) {
+		super(id, solde);
 		this.setDecouvert(decouvert);
 	}
 
