@@ -13,9 +13,7 @@ public class Client {
 
 	}
 	//constructeur avec tous les attributs
-	public Client(String nom, String prenom, String client, String compte, int numero){
-		this.client = client;
-		this.compte = compte;
+	public Client(String nom, String prenom,  int numero){
 		this.numero = numero;
 		this.nom = nom;
 		this.prenom = prenom;
